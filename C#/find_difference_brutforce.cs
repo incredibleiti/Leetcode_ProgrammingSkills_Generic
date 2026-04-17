@@ -25,17 +25,34 @@ t.length == s.length + 1
 s and t consist of lowercase English letters.
 */
 
+using System;
 
-public class Solution {
-    public char FindTheDifference(string s, string t) {
-        if(s.Length == 0)         
-        return t[0];
-        
-        foreach (char c in t) {
-                if (t.Count(ch => ch == c) > s.Count(ch => ch == c)) {
-                    return c;
-                }
-            }
-        return '\0';
+namespace HelloWorld
+{
+    class Program
+    {
+      static void Main(string[] args)
+      {
+        string s = "test";
+        string t = "twest";
+
+        char result = FindTheDifference(s,t);
+        Console.WriteLine(result);
+      }
+
+
+      public class Solution {
+          public char FindTheDifference(string s, string t) {
+              if(s.Length == 0)         
+              return t[0];
+              
+              foreach (char c in t) {
+                      if (t.Count(ch => ch == c) > s.Count(ch => ch == c)) {
+                          return c;
+                      }
+                  }
+              return '\0';
+          }
+      }
     }
 }
